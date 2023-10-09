@@ -1,0 +1,124 @@
+.list {
+    height: fit-content;
+    width: 776px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__search { 
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        &__question {
+            color: #F1F5F9;
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            line-height: 64px;
+        }
+
+        &__title {
+            width: 512px;
+
+            color: #BAE6FD;
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 20px;
+        }
+
+        &__input__wrapper {
+            width: 512px;
+            height: 62px;
+            border-radius: 16px;
+            background-color: #0F172A;
+
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 14px;
+        }
+
+        &__input {
+            width: 100%;
+            height: 100%;
+
+            border-radius: 16px;
+            background-color: #0F172A;
+
+            outline: none;
+            border: none;
+
+            padding: 0 0 0 58px;
+            
+            color: #F1F5F9;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+
+            
+            
+            
+            &::placeholder {
+                color: #475569;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+            }
+            
+            &__icon {
+                position: absolute;
+                padding: 22px 16px 22px 24px;
+                width: 18px;
+                height: 18px;
+            }
+
+
+        }
+
+        &__categories {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            width: 512px;
+        }
+
+        &__category {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            &:is(:first-child) {
+                margin-right: 32px;
+            }
+
+            &__icon {
+                height: 16px;
+                width: 22px;
+                margin-right: 8px;
+            }
+
+            &__name {
+                color: #E2E8F0;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+            }
+        }
+
+    }
+    
+    &__results {
+
+    }
+}

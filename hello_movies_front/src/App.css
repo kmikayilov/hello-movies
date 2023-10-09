@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  width: 100vw;
+  background-color: #070B15;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 128px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
