@@ -1,0 +1,204 @@
+.list-item {
+
+    display: flex;
+
+    .item {
+
+        &__poster {}
+        &__year {
+            color: #E2E8F0;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px; 
+        }
+        &__title {
+            color: #7DD3FC;
+            text-transform: uppercase;
+        }
+        &__desc {
+            color: #E2E8F0;
+            
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            
+            
+        }
+        &__genres {}
+        &__dot {
+            color: #7DD3FC;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            margin: 0 5px;
+        }
+        &__duration {}
+        &__rating {
+            color: #E2E8F0;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+        }
+
+        &__score {
+            color: #FFF;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+        }
+
+    }
+
+    .star {
+        margin: 0 5px;
+    }
+
+
+    &.horizontal {
+        width: 544px;
+        height: 160px;
+
+        margin-bottom: 32px;
+
+        flex-direction: row;
+
+        .first-half {
+            width: 106px;
+            height: 100%;
+
+            .item__poster__image {
+                height: 100%;
+                width: 100%;
+
+                border-radius: 16px 0 0 16px;
+                
+                background: lightgray 0px 0px / 100% 100% no-repeat;   
+            }
+        }
+        .second-half {
+            background-color: #04060C;
+            
+            border-radius: 0 16px 16px 0;
+
+            width: calc(544px - 106px);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .first-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                padding: 16px 20px;
+
+                flex-grow: 1;
+            }
+        }
+
+        .item {
+
+            &__poster {}
+            &__year {}
+            &__title {
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 28px;
+
+                padding-left: 20px;
+                margin-bottom: 4px;
+            }
+            &__desc {
+                font-size: 16px;
+                padding-left: 20px;
+                margin-bottom: 20px;
+            }
+            &__genres {}
+            &__duration {}
+            &__rating {
+                font-size: 16px;
+            }
+            &__score {
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    &.vertical {
+        width: 256px;
+        height: 448px;
+
+        flex-direction: column;
+        justify-content: center;
+
+        margin-bottom: 32px;
+
+        .item {
+
+            &__poster {
+                height: 384px;
+                width: 100%;
+                
+                position: relative;
+                margin-bottom: 8px;
+                
+                &__image {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 16px;
+
+                    background: lightgray 0px 0px / 100% 100% no-repeat;
+                }
+            }
+
+            &__year {
+                position: absolute;
+                left: 0;
+                top: 32px;
+
+                background-color: #070B15;
+                width: 46px;
+                height: 24px;
+                border-radius: 0px 8px 8px 0px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &__title {
+                margin-bottom: 4px;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 16px;
+
+                text-align: center;
+            }
+            &__desc {
+                margin-bottom: 4px;
+                font-size: 12px;
+                
+                text-align: center;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            &__genres {}
+            &__duration {}
+            &__rating {
+                font-size: 12px;
+                text-align: center;
+            }
+            
+            &__score {
+                font-size: 14px;
+            }
+        }
+    }
+}

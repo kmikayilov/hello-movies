@@ -1,12 +1,14 @@
-import "./Footer.scss"
-import FooterLogo from "../../assets/logos/footer-logo.svg"
+import React from "react"
 
+import "./Footer.scss"
+
+import FooterLogo from "../../assets/logos/footer-logo.svg"
 import FacebookLogo from "../../assets/social icons/facebook.svg"
 import LinkedInLogo from "../../assets/social icons/linkedIn.svg"
 import DribbbleLogo from "../../assets/social icons/dribbble.svg"
 import InstagramLogo from "../../assets/social icons/instagram.svg"
 
-const Footer = () => (
+const Footer: React.FC = () => (
 	<div className="footer">
         <div className="footer__logo">
             <div className="footer__logo__wrapper">
