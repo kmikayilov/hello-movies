@@ -66,9 +66,10 @@
             font-weight: 400;
             line-height: 28px;
 
-            
-            
-            
+            &:focus {
+                border: 1px solid #BAE6FD;
+            }
+
             &::placeholder {
                 color: #475569;
                 font-size: 20px;

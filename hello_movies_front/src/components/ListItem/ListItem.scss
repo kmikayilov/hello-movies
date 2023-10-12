@@ -2,6 +2,10 @@
 
     display: flex;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     .item {
 
         &__poster {}

@@ -4,5 +4,131 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    width: 1120px;
+    max-width: 1120px;
+
+    margin-bottom: 30px;
+    
+    &-info {
+        max-width: 1120px;
+
+        margin-bottom: 32px;
+
+        display: flex;
+        flex-direction: row;
+
+
+        &-count {
+
+            color: #E2E8F0;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+
+            flex-grow: 1;
+
+            .count {
+                color: #FBBF24;
+            }
+        }
+    }
+
+    &-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        span {
+            color: #E2E8F0;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        .btn {
+            width: 32px;
+            height: 32px;
+
+            padding: 0;
+
+            background-color: #0F172A;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+
+            border: none;
+            outline: none;
+
+            &:hover,
+            &:focus {
+                svg {
+                    
+                    color: #FBBF24;
+                }   
+            }
+
+            &.vertical-layout {
+                margin: 0 12px;
+            }
+
+            &.active {
+                background-color: #04060C;
+                
+                svg {
+                    
+                    color: #FBBF24;
+                }
+            }
+
+            svg {
+                width: 14px;
+                height: 14px;
+                color: #475569;
+            }
+        }
+    }
+
+    &-paginate {
+        max-width: 1120px;
+        display: flex;
+        flex-direction: row;        
+
+        &-info {
+            color: #E2E8F0;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+
+            flex-grow: 1;
+
+            .count {
+                color: #FBBF24;
+            }
+
+        }
+
+        &-btns {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .btn {
+                width: 97px;
+                height: 32px;
+
+                &.btn-previous {
+                    margin-right: 24px;
+                }
+                
+                &.btn-next {}
+            }
+        }
+    }
+
 }
+
