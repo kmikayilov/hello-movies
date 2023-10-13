@@ -1,6 +1,7 @@
 .list-item {
 
     display: flex;
+    margin-left: 5px;
 
     &:hover {
         cursor: pointer;
@@ -60,12 +61,22 @@
 
 
     &.horizontal {
-        width: 544px;
+        max-width: 544px;
+        width: calc((100% / 2) - 10px);
         height: 160px;
 
-        margin-bottom: 32px;
+        margin-left: 0;
 
-        flex-direction: row;
+        margin-bottom: 32px;  
+        
+        @media (max-width: 850px) {
+            max-width: 380px;
+        }
+
+        @media (max-width: 650px) {
+            max-width: 550px;
+            width: 95%;
+        }
 
         .first-half {
             width: 106px;
@@ -85,7 +96,7 @@
             
             border-radius: 0 16px 16px 0;
 
-            width: calc(544px - 106px);
+            width: calc(100% - 106px);
 
             display: flex;
             flex-direction: column;
@@ -119,8 +130,23 @@
                 font-size: 16px;
                 padding-left: 20px;
                 margin-bottom: 20px;
+
+                @media (max-width: 850px) {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
-            &__genres {}
+
+            &__dot {
+                @media (max-width: 850px) {
+                    display: none;
+                }
+            }
+            &__genres {
+                @media (max-width: 850px) {
+                    margin-bottom: 5px;
+                }
+            }
             &__duration {}
             &__rating {
                 font-size: 16px;
@@ -136,6 +162,18 @@
         width: 256px;
         height: 448px;
 
+        @media (max-width: 768px) {
+            width: 224px;
+            height: 384px;
+        
+        }
+
+        @media (max-width: 360px) {
+            width: 160px;
+            height: 283px;
+        
+        }
+
         flex-direction: column;
         justify-content: center;
 
@@ -146,6 +184,16 @@
             &__poster {
                 height: 384px;
                 width: 100%;
+
+                @media (max-width: 768px) {
+                    height: 332px;
+                
+                }
+
+                @media (max-width: 360px) {
+                    height: 243px;
+                
+                }
                 
                 position: relative;
                 margin-bottom: 8px;
@@ -182,6 +230,11 @@
                 line-height: 16px;
 
                 text-align: center;
+
+                @media (max-width: 360px) {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
             }
             &__desc {
                 margin-bottom: 4px;
@@ -192,13 +245,24 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
+
+                @media (max-width: 360px) {
+                    display: none;
+                }
             }
             &__genres {}
             &__duration {}
             &__rating {
                 font-size: 12px;
                 text-align: center;
+                
+                .imdb-title {
+                    @media (max-width: 360px) {
+                        display: none;
+                    }
+                }
             }
+
             
             &__score {
                 font-size: 14px;

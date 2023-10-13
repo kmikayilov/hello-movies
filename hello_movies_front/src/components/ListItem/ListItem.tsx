@@ -1,11 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux"
 
 import { MovieInfo } from "../../helpers/interfaces"
+import { fetchMovie } from "../../helpers/state/movieSlice";
 
 import "./ListItem.scss"
 
 import StarIcon from "../../assets/icons/star.svg"
-
 
 interface ListItemProps {
     layout: string,
@@ -13,9 +15,18 @@ interface ListItemProps {
 }
 
 const ListItem: React.FC<ListItemProps> = ({ layout, data }) => {
+    
+    const dispatch: any = useDispatch();
+
+    const navigate = useNavigate();
+
+    const handleMovieClick = () => {
+        dispatch(fetchMovie(data.id))
+        navigate(`/detail/${data.id}`);
+    }
 
     return (
-        <div className={`list-item ${layout}`}>
+        <div className={`list-item ${layout}`} onClick={handleMovieClick}>
             {
                 layout === "vertical" ? (
                     <>
@@ -30,7 +41,7 @@ const ListItem: React.FC<ListItemProps> = ({ layout, data }) => {
                             <span className="item__duration">{data.duration} min</span>
                         </div>
                         <div className="item__rating">
-                            <span>IMDb:</span>
+                            <span className="imdb-title">IMDb:</span>
                             <img src={StarIcon} alt="star" className="star" />
                             <span className="item__score">{data.score}</span>
                         </div>
@@ -44,7 +55,7 @@ const ListItem: React.FC<ListItemProps> = ({ layout, data }) => {
                             <div className="first-row">
                                 <div className="item__year">{data.year}</div>
                                 <div className="item__rating">
-                                    <span>IMDb:</span>
+                                    <span className="imdb-title">IMDb:</span>
                                     <img src={StarIcon} alt="star" className="star" />
                                     <span className="item__score">{data.score}</span>
                                 </div>

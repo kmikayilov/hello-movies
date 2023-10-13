@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { useSelector, shallowEqual, useDispatch } from "react-redux"
 
 import ListItems from "../ListItems/ListItems"
 
@@ -8,14 +9,41 @@ import SearchIcon from "../../assets/icons/search.svg"
 import MoviesIcon from "../../assets/icons/movie.svg"
 import TVIcon from "../../assets/icons/tv.svg"
 
+import { filterMovies } from "../../helpers/state/movieSlice"
+
 
 const List: React.FC = () => {
 
+    let typingTimer: NodeJS.Timeout | null = null;
+    const typingDelay: number = 1500;
+
+    const dispatch: any = useDispatch()
+
     let [searchValue, setSearchValue] = useState<string>("")
+    let [filterValue, setFilterValue] = useState<string>("")
+
+	const currentPage = useSelector((state: any) => state.movie.currentPage, shallowEqual)
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
+        
+        if (typingTimer) {
+            clearTimeout(typingTimer);
+        }
+        
+        typingTimer = setTimeout(() => {
+            setFilterValue(e.target.value);
+        }, typingDelay);
     };
+
+    useEffect(() => {
+        const query: any = {
+            title: filterValue,
+            page: currentPage
+        }
+
+        dispatch(filterMovies(query))
+    }, [dispatch, filterValue, currentPage])
 
     return (
         <div className="list">

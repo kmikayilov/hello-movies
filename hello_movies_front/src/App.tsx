@@ -16,7 +16,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" Component={List} />
-            <Route path="/:id" Component={MovieDetails} />
+            <Route path="/detail/:id" Component={MovieDetails} />
           </Routes>
         </Router>
       </div>
