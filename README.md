@@ -1,5 +1,7 @@
 # Hello-Movies application
 
+## This is the test task for the Hello-Movies company.
+
 ## Hello-Movies front side
 
 The Front side of the application is written on React.TS
